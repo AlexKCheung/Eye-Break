@@ -8,4 +8,14 @@
         "default_popup": "break.html", 
         "default_icon": "break_extensions.png"
     }
+
+    "commands": {
+        "_execute_actoin": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            },
+            "description": "Opens break.html"
+        }
+    }
 }
