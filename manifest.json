@@ -1,0 +1,11 @@
+{
+    "name": "Eye Break", 
+    "description": "Extension for eye breaks", 
+    "version": "1.0", 
+    "manifest_version": 3
+    
+    "action": {
+        "default_popup": "break.html", 
+        "default_icon": "break_extensions.png"
+    }
+}
