@@ -15,6 +15,11 @@ let alarmInfo = {}
 
 alarmInfo.periodInMinutes = (1);
 
+/* TODO
+FIGURE OUT WHAT TO DO FOR ALARMINFO
+SHOW NOTIFICATION OR TAB?
+RESET TIMER
+*/
 
 // create the alarm
 chrome.alarms.create("my alarm", alarmInfo);
