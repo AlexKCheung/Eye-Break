@@ -10,9 +10,9 @@ let alarmInfo = {
 //    specific time to fire alarm
 //    when: Date.now() + timer
     // delay X minutes then fire alarm
-    delayInMinutes: 0.1,
+    delayInMinutes: 1,
     // fire alarm every 60 minutes 
-    periodInMinutes: 0.1
+    periodInMinutes: 5
 }
 
 // notification info
@@ -37,7 +37,6 @@ document.getElementById('start').onclick = function() {
 
     // firing the alarm
     chrome.alarms.onAlarm.addListener(onAlarm);
-
 
 }
 
