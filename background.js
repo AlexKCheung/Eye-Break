@@ -1,5 +1,4 @@
-var dbName = 'todos-vanillajs';
-
+//var dbName = 'todos-vanillajs';
 /*
 chrome.app.runtime.onLaunched.addListener(function() {
     chrome.app.window.create('break.html', {
@@ -11,6 +10,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
     });
 });
 */
+/*
 function launch() {
     chrome.app.window.create('break.html', {
         id: 'main', 
@@ -20,11 +20,18 @@ function launch() {
         }
     });
 }
+*/
 
-chrome.app.runtime.onLaunched.addListener(launch);
+// chrome.app.runtime.onLaunched.addListener(launch);
 /*
 chrome.alarms.onAlarm.addListener(function(alarm) {
     console.log("Got an alarm!", alarm);
 })
 */
+
+chrome.action.onClicked.addListener(opentime);
+
+function opentime() {
+    chrome.tabs.create({url: 'index.html'});
+}
 

@@ -10,9 +10,9 @@ let alarmInfo = {
 //    specific time to fire alarm
 //    when: Date.now() + timer
     // delay X minutes then fire alarm
-    delayInMinutes: 1,
+    delayInMinutes: 0.1,
     // fire alarm every 60 minutes 
-    periodInMinutes: 5
+    periodInMinutes: 0.1
 }
 
 // notification info
@@ -23,12 +23,6 @@ let notificationInfo = {
     iconUrl: 'icon_128.png'
 
 }
-
-/* TODO
-FIGURE OUT WHAT TO DO FOR ALARMINFO
-SHOW NOTIFICATION OR TAB?
-RESET TIMER
-*/
 
 // if start button is clicked
 document.getElementById('start').onclick = function() {

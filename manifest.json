@@ -5,7 +5,7 @@
     "manifest_version": 3,
     
     "action": {
-        "default_popup": "break.html", 
+        "default_popup": "index.html", 
         "default_icon": "break_extensions.png"
     },
 
@@ -19,8 +19,7 @@
     },
 
     "background": {
-        "scripts": ["background.js"], 
-        "persistent": false
+        "service_worker": "background.js"
     },
 
     "commands": {
@@ -29,7 +28,7 @@
                 "default": "Ctrl+Shift+F",
                 "mac": "MacCtrl+Shift+F"
             },
-            "description": "Opens break.html"
+            "description": "Opens index.html"
         }
     }
 }
