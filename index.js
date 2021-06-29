@@ -1,37 +1,27 @@
 // timer for eye break
-
 // get minutes to set timer
 document.getElementById('start').onclick = function() {
-    var timer = (parseInt(document.getElementById('minutes').value) * 60)
-}
+    var timer = parseFloat(document.getElementById('minutes').value)
 
-// alarm info
-let alarmInfo = {
-//    specific time to fire alarm
-//    when: Date.now() + timer
-    // delay X minutes then fire alarm
-    delayInMinutes: 0.1,
-    // fire alarm every 60 minutes 
-    periodInMinutes: 0.1
-}
+    // alarm info
+    let alarmInfo = {
+        //    specific time to fire alarm
+        //    when: Date.now() + timer
+            // delay X minutes then fire alarm
+            delayInMinutes: timer,
+            // fire alarm every interval minutes 
+            periodInMinutes: timer
+        }
 
-// notification info
-let notificationInfo = {
-    type: "basic", 
-    title: 'Notification',
-    message: 'Time for an eye break!',
-    iconUrl: 'icon_128.png'
-
-}
-
-// if start button is clicked
-document.getElementById('start').onclick = function() {
     // create the alarm
     chrome.alarms.create("my alarm", alarmInfo);
+}
 
-    // firing the alarm
-    chrome.alarms.onAlarm.addListener(onAlarm);
+function onAlarm(alarm) {
+    // console log 
+    console.log("Alarm Fired!", alarm)
 
+    chrome.notifications.create("notification", notificationInfo)
 }
 
 // if reset button is clicked close the alarm
@@ -46,10 +36,3 @@ document.getElementById('reset').onclick = function() {
 
 }
 
-
-function onAlarm(alarm) {
-    // console log 
-    console.log("Alarm Fired!", alarm)
-
-    chrome.notifications.create("notification", notificationInfo)
-}

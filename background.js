@@ -1,27 +1,3 @@
-//var dbName = 'todos-vanillajs';
-/*
-chrome.app.runtime.onLaunched.addListener(function() {
-    chrome.app.window.create('break.html', {
-        id: 'main', 
-        bounds: {
-            width: 620, 
-            height 500
-        }
-    });
-});
-*/
-/*
-function launch() {
-    chrome.app.window.create('break.html', {
-        id: 'main', 
-        bounds: {
-            width: 620, 
-            height 500
-        }
-    });
-}
-*/
-
 // chrome.app.runtime.onLaunched.addListener(launch);
 /*
 chrome.alarms.onAlarm.addListener(function(alarm) {
@@ -29,9 +5,26 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 })
 */
 
-chrome.action.onClicked.addListener(opentime);
+// firing the alarm
+chrome.alarms.onAlarm.addListener(onAlarm);
+function onAlarm(alarm) {
+    // console log 
+    console.log("Alarm Fired!", alarm)
 
+    chrome.notifications.create("notification", notificationInfo)
+}
+// notification info
+let notificationInfo = {
+    type: "basic", 
+    title: 'Notification',
+    message: 'Time for an eye break!',
+    iconUrl: 'icon_128.png'
+
+}
+//chrome.action.onClicked.addListener(opentime);
+/*
 function opentime() {
+    console.log("background.js activated?")
     chrome.tabs.create({url: 'index.html'});
 }
-
+*/
