@@ -18,7 +18,7 @@ let notificationInfo = {
     type: "basic", 
     title: 'Notification',
     message: 'Time for an eye break!',
-    iconUrl: 'icon_128.png'
+    iconUrl: '/Images/icon_128.png'
 
 }
 //chrome.action.onClicked.addListener(opentime);
